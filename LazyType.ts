@@ -25,21 +25,20 @@ export type LazyType =
 // | Function;
 
 /**
- The `lazy()` function is a utility function that takes a `Lazy<T>` and returns a `T`.
+ The `lazyval()` function is a utility function that takes a `Lazy<T>` and returns a `T`.
 
  NOTES: In the beginning, it seems natural to want to have a type like:
 
  ```
  // Doesn't actually work in TypeScript:
- function lazy(T | (() => T)) {
+ function lazyval(T | (() => T)) {
    return typeof value === 'function' ? value() : value;
  }
  ```
  ... but that [does not actually work in TypeScript](https://github.com/microsoft/TypeScript/issues/37663).
  */
 export const lazyval = <T extends LazyType>(
-  value: T | (() => T | undefined),
-): T | undefined =>
-{
-  return typeof value === 'function' ? value() : value;
+  value: T | (() => T | undefined)
+): T | undefined => {
+  return typeof value === "function" ? value() : value;
 };

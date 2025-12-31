@@ -23,9 +23,9 @@ const config: {
 };
 
 // Resolve values when needed
-const apiKey = lazy(config.apiKey); // 'static-key-123'
-const timestamp = lazy(config.timestamp); // current timestamp
-const debug = lazy(config.debug); // boolean from env
+const apiKey = lazyval(config.apiKey); // 'static-key-123'
+const timestamp = lazyval(config.timestamp); // current timestamp
+const debug = lazyval(config.debug); // boolean from env
 ```
 
 ## Why?
@@ -40,4 +40,5 @@ MIT
 
 ---
 
+🎅 2025-12-31: publish 0.1.1 to jsr.io
 🤖 2025-12-31: repo initialized by Bottie McBotface bot@axhxrx.com

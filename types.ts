@@ -1,5 +1,5 @@
 /**
- Utility type for basing other types on, and using with [lazy()](./lazy.ts).
+ Utility type for basing other types on, and using with [lazyval()](./lazy.ts).
 
  Migrated from `/Volumes/CODE/axhxrx-mmxxv/libs/ts/core/src/lib/resolve/Resolvable.ts`
 
@@ -10,9 +10,10 @@
  The (weird) fix was to change `T` to `[T]` which [disables distributivity](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types).
  */
 
-import type { LazyType } from './LazyType.ts';
+import type { LazyType } from "./LazyType.ts";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 // deno-lint-ignore ban-types
-export type Lazy<T extends LazyType> = [T] extends Function ? never
+export type Lazy<T extends LazyType> = [T] extends Function
+  ? never
   : T | (() => T);

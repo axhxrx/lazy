@@ -1,7 +1,7 @@
 /**
  @module @axhxrx/lazy
  
- Provides the `Lazy<T>` type and `lazy()` function for lazy evaluation.
+ Provides the `Lazy<T>` type and `lazyval()` function for lazy evaluation.
  
  @example
  ```typescript
@@ -11,7 +11,7 @@
    timeout: () => Date.now()
  };
  
- const timeout = lazy(config.timeout);
+ const timeout = lazyval(config.timeout);
  ```
  */
 
