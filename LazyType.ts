@@ -32,13 +32,13 @@ export type LazyType =
  ```
  // Doesn't actually work in TypeScript:
  function lazyval(T | (() => T)) {
-   return typeof value === 'function' ? value() : value;
+   return typeof value w=== 'function' ? value() : value;
  }
  ```
  ... but that [does not actually work in TypeScript](https://github.com/microsoft/TypeScript/issues/37663).
  */
 export const lazyval = <T extends LazyType>(
-  value: T | (() => T | undefined)
+  value: T | (() => T | undefined),
 ): T | undefined => {
   return typeof value === "function" ? value() : value;
 };
