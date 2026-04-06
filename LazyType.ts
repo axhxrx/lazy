@@ -39,6 +39,7 @@ export type LazyType =
  */
 export const lazyval = <T extends LazyType>(
   value: T | (() => T | undefined),
-): T | undefined => {
-  return typeof value === "function" ? value() : value;
+): T | undefined =>
+{
+  return typeof value === 'function' ? value() : value;
 };
